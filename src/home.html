@@ -1,14 +1,64 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <button onclick="add_item();">
-            add
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <title>Home</title>
+    <link href="homestyle.css" rel="stylesheet">
+  </head>
+  <body>
+      <div class="container-fluid padding">
+          <div class="row padding" id = "bar">
+              <div class="col-md-2">
+                  <button type="button" class="btn btn-light btn-circle btn-xl util" id="246" name="facebook" onclick="openNavUtil(this);">
+                      <i class="fab fa-facebook-f" style="font-size:64px"></i>
+                  </button>
+              </div>
+              
+              <div class="col-md-2">
+                  <button type="button" class="btn btn-light btn-circle btn-xl" id = "shop" onclick="add_item();">
+                      <i class="fas fa-plus w3-text-grey" style="font-size:64px"></i>
+                  </button>
+              </div >
+          </div>
+      </div>
+      <div id="mySidebar" class="sidebar">
+          <iframe src="http://global.11st.co.kr/html/en/main_en.html" height="600" width="450px"></iframe>
+      </div>
+      <div id="main">
+          <button class="btn btn-primary buy" id="purchase" data-toggle="modal" data-target="#popup">Purchase</button>
+          <button type="button" class="btn btn-primary close" id="close" onclick="closeNav()" style="display: none;">Close</button>
+          <button type="button" class="btn btn-primary" id="tog" onclick="add(248, 'twitter', 'd');">Add</button>
+      </div>
+      <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
-        <button onclick="buy();">
-            buy
-        </button>
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      </div>
+      <div class="modal-body">
+         <iframe src="https://www.coupang.com/" height="600" width="450px"></iframe>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
         <script src="/__/firebase/8.0.1/firebase-app.js"></script>
         <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
@@ -19,6 +69,6 @@
         <!-- Initialize Firebase -->
         <script src="/__/firebase/init.js"></script>
         <!-- other scripts that rely on firebase -->
-        <script src="home.js"></script>
-    </body>
+      <script src="home.js"></script>
+  </body>
 </html>
