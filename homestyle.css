@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap');
+
+head, body{
+    background-color: rgb(151, 196, 166);
+    font-family: 'Quicksand', sans-serif;
+}
+.buy{
+    position: fixed;
+    margin-left: 590px;
+    margin-top: 450px;
+    background-color: rgb(232, 199, 69);
+    border: 3px solid grey;
+}
+
+.btn btn-primary next{
+    justify-content: center;
+    margin-right: 0;
+}
+
+.close{
+    position: fixed;
+    margin-left: 750px;
+    margin-top: 10px;
+    background-color: rgb(232, 199, 69);
+    border: 3px solid grey;
+}
+.buy:hover{
+    background-color: rgb(110,212,110);
+    border: 3px solid rgb(110,212,110);
+}
+.btn-circle.btn-xl { 
+    position: absolute;
+    width: 100px; 
+    height: 100px; 
+    padding: 10px 16px; 
+    border-radius: 50px;
+    border: 3px solid grey;
+    font-size: 12px; 
+    text-align: center; 
+    margin-left: 200px;
+    margin-top: 100px;
+    background-color: lightgreen;
+} 
+.fa-plus{
+    color: black;
+    width: 20px;
+    height: 20px;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+.sidebar {
+  height: 100%;
+  width:0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
