@@ -10,6 +10,9 @@ function enter(){
     })
 });
 }
+$(document).ready(function(){
+    enter();
+});
 
 //For Searched input : get input from search bar, and search
 function get_input(){
@@ -49,19 +52,55 @@ function match_name(name){
 
 function search_item(p) {
     var product = p.toLowerCase().replace(/\s+/g, '');
-    document.getElementById("agg").innerHTML = dict[product];
+    dict["toiletpaper"] = tolietpaper;
+
+    //dummy example
+    document.getElementById("agg").innerHTML = dict[product][0]["title"] 
+                            + dict[product][0]["thumbnail"] + dict[product][0]["link"];
+    
+    
+    //
+    
     $("#icons").slideUp(); //icons are gone
     setTimeout(function(){ $("#agg").show(); }, 400);
-}
 
+    let card = document.getElementsByTagName("div")[1];
+    //description button for the product
+    let des = document.createElement("button");
+    des.innerHTML = "description";
+    card.appendChild(des);
+
+    //add button : adds icon to the home
+    let add = document.createElement("button");
+    add.innerHTML = "add";
+    add.addEventListener('click', function() {
+        icon_to_home(add.innerHTML);
+    }, false);
+    card.appendChild(add);
+    
+    
+    //$(".card_columns").show()
+}
+//TODO: add the icon to the home inventory
+/*
+function icon_to_home(icon){
+    var home = document.getElementsByTagName("home.html.body")[0];
+    let iconButton = document.createElement("button");
+    iconButton.innerHTML = icon;
+    home.appendChild(iconButton);
+}*/
+
+//Go back to the icon search bar
 function back(){
     $("#icons").show();
     $("#agg").slideUp();
 }
 
+//Back to home
 function go_home() {
     window.location.href = "home.html";
 }
+
 
 // If not logged in, go back to log-in page.
 firebase.auth().onAuthStateChanged(function(user) {
@@ -79,18 +118,23 @@ $(document).ready(function(){
     create_icons();
 });
 
-$(document).ready(function(){
-    enter();
-});
+
 
 var util = ["Toilet Paper", "Detergent", "Egg", "Diper", "Water","Milk",
-        "apple","thanh","hunger","pain","sleeep"];
+        "apple","Oil","Soap","Toothpaste","Shampoo"];
 
-//create a dictionary of { product : matching product card}
+//create a dictionary of {product : matching product card}
 var dict = {}
 for (i=0; i<util.length;i++){
     var item = util[i].toLowerCase().replace(/\s+/g, '');
     dict[item]=i;
 }
+//dummy dataset example for the result of the product search
+var tolietpaper=[{"title":"soft paper","thumbnail":"img", "link":"#"}];
+
+
+
+
+
 
 

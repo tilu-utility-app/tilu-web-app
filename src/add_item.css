@@ -1,3 +1,11 @@
 #agg {
     display: none;
 }
+
+
+
+.card-columns {display:inline-block;} 
+
+.card-columns{
+    display: none;
+}
