@@ -63,6 +63,20 @@ function go_home() {
     window.location.href = "home.html";
 }
 
+// Get the products under a category
+// The products catalogue for a category is obtained via an API call
+var db = firebase.firestore();
+
+async function get_products(product_category){
+    cat_list = [];
+    await db.collection("products").doc(product_category).collection("catalogue").get().then(function(cat){
+        cat.forEach(function(item){
+            cat_list.push(item.data());
+        });
+    }); 
+    return cat_list;
+}
+
 // If not logged in, go back to log-in page.
 firebase.auth().onAuthStateChanged(function(user) {
     if (!user) {
@@ -93,4 +107,4 @@ for (i=0; i<util.length;i++){
     dict[item]=i;
 }
 
-
+get_products("toilet-paper").then(console.log);
