@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="add_item.css">
+    </head>
+    <body>
+        <div id="icons"> 
+            <button onclick="search_item();">
+                Milk
+            </button>
+        </div>
+        <div id="agg">
+            <!-- TODO: add a list of product cards -->
+            <!-- TODO: each card contains a description button and add button -->
+            <!-- TODO: create a description popup -->
+        </div>
+        <button onclick="go_home();">
+            Done!
+        </button>
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="/__/firebase/8.0.1/firebase-app.js"></script>
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/8.0.1/firebase-firestore.js"></script>
+        <script src="/__/firebase/8.0.1/firebase-auth.js"></script>
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+        <!-- other scripts that rely on firebase -->
+        <script src="add_item.js"></script>
+    </body>
+</html>
